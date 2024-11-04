@@ -43,7 +43,7 @@ class GamesMemModel {
             this.games.splice(index, 1, updateGame)
             return updateGame
         } catch (error) {
-            console.error("La actualización total del juego no se pudo completar.")
+            return "La actualización total del juego no se pudo completar."
         }
     }
 

@@ -43,7 +43,7 @@ class ConsolesMemModel {
             this.consoles.splice(index, 1, updateConsole)
             return updateConsole
         } catch (error) {
-            console.error("La actualización total de la consola no se pudo completar.")
+            return "La actualización total de la consola no se pudo completar."
         }
     }
 

@@ -50,7 +50,7 @@ class ConsolesController {
         const { id } = req.params
         const data = req.body
         const consolePartialUpdate = await this.service.patchConsole(id, data)
-        res.status(200).send(consolePartialUpdate)
+        res.send(consolePartialUpdate)
     }
 
 }
