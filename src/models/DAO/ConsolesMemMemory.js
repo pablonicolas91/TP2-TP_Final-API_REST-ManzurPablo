@@ -39,22 +39,33 @@ class ConsolesMemModel {
         try {
             const index = this.consoles.findIndex((e) => e.id == id)
             if(index == -1) throw new Error("El índice no existe.")
+
             const updateConsole = {...this.consoles[index], ...data}
             this.consoles.splice(index, 1, updateConsole)
             return updateConsole
+
         } catch (error) {
-            return "La actualización total de la consola no se pudo completar."
+            return {errorType: error.message, 
+                    errorInformation: "La actualización total de la consola no se pudo completar."
+                }
         }
     }
 
     async deleteConsole (id) {
         const index = this.consoles.findIndex((e) => e.id == id)
-        if(index == -1){
-            throw new Error("El índice no existe.")
-        } else{
-            this.consoles.splice(index, 1)
-            return `La consola con id ${id} se eliminó correctamente.`
+        try {
+            if(index == -1){
+                throw new Error("El índice no existe.")
+            } else{
+                this.consoles.splice(index, 1)
+                return {success: `La consola con id ${id} se eliminó correctamente.`}
+            }
+        
+        } catch(error) {
+            return {error: error.message}
         }
+
+        
     }
 }
 

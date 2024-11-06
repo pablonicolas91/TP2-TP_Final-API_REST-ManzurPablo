@@ -39,22 +39,32 @@ class GamesMemModel {
         try {
             const index = this.games.findIndex((e) => e.id == id)
             if(index == -1) throw new Error("El índice no existe.")
+
             const updateGame = {...this.games[index], ...data}
             this.games.splice(index, 1, updateGame)
             return updateGame
+
         } catch (error) {
-            return "La actualización total del juego no se pudo completar."
+            return {error: error.message, 
+                    errorInformation: "La actualización total del juego no se pudo completar."
+                    }
         }
     }
 
     async deleteGame (id) {
         const index = this.games.findIndex((e) => e.id == id)
-        if(index == -1){
-            throw new Error("El índice no existe.")
-        } else{
-            this.games.splice(index, 1)
-            return `El juego ${this.games[id].nombre} se eliminó correctamente.`
+        try {
+            if(index == -1){
+                throw new Error("El índice no existe.")
+            } else{
+                this.games.splice(index, 1)
+                return {success:`El juego ${this.games[id].nombre} se eliminó correctamente.`}
+            }
+
+        } catch (error){
+            return {error: error.message}
         }
+      
     }
 }
 
