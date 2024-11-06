@@ -1,4 +1,5 @@
 import MongoConnection from "../MongoConnection.js"
+import { ObjectId } from "mongodb"
 
 class GamesMongoModel {
     constructor(){
@@ -17,15 +18,26 @@ class GamesMongoModel {
     }
 
     async patchGame(id, data) {
-     
+     const game = await MongoConnection.db.collection("games").updateOne(
+            {_id: ObjectId.createFromHexString(id)},
+            {$set: data}
+        )
+     return game
     }
 
     async putGame (id, data) {
-       
+       const game = await MongoConnection.db.collection("games").replaceOne(
+            {_id: ObjectId.createFromHexString(id)},
+        data
+        )
+     return game
     }
 
     async deleteGame (id) {
-       
+        const game = await MongoConnection.db.collection("games").deleteOne(
+            {_id: ObjectId.createFromHexString(id)}
+        )
+        return game
     }
 }
 

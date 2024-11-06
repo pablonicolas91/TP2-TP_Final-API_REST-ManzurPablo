@@ -1,9 +1,9 @@
 class ConsolesMemModel {
     constructor(){
         this.consoles = [
-            { id: 1, marca: "Sony", modelo: "PlayStation 5", precio: 1500000},
-            { id: 2, marca: "Microsoft", modelo: "Xbox", precio: 1200000},
-            { id: 3, marca: "Nintendo", modelo: "Switch", precio: 700000}
+            { id: 1, marca: "Sony", modelo: "PlayStation 5", precioUSD: 1080},
+            { id: 2, marca: "Microsoft", modelo: "Xbox", precioUSD: 800},
+            { id: 3, marca: "Nintendo", modelo: "Switch", precioUSD: 750}
         ]
     }
 

@@ -1,9 +1,9 @@
 class GamesMemModel {
     constructor(){
         this.games = [
-            { id: 1, nombre: "FC 25", genero: "Deportes", plataforma:"PlayStation 5", precio: 20000},
-            { id: 2, nombre: "Need for Speed", genero: "Carreras", plataforma:"PlayStation 4", precio: 35000},
-            { id: 3, nombre: "Resident Evil: Revelations 2", genero: "Horror", plataforma:"PlayStation 4", precio: 33000}
+            { id: 1, nombre: "FC 25", genero: "Deportes", plataforma:"PlayStation 5", precioUSD: 20},
+            { id: 2, nombre: "Need for Speed", genero: "Carreras", plataforma:"PlayStation 4", precioUSD: 35},
+            { id: 3, nombre: "Resident Evil: Revelations 2", genero: "Horror", plataforma:"PlayStation 4", precioUSD: 33}
         ]
     }
 
