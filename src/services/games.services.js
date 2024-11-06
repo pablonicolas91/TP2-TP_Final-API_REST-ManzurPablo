@@ -1,9 +1,9 @@
 import Factory from "../models/Factory.js"
-//MONGOGames  / 
+import config from "../config.js"
 
 class GamesServices {
     constructor(){
-        this.model = Factory.get("MONGOGames")
+        this.model = Factory.get(config.PERSISTENCEGAMES)
     }
 
     postGame = async(data) => {

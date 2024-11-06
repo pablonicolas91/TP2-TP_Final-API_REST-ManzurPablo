@@ -1,9 +1,9 @@
 import Factory from "../models/Factory.js"
-//MONGOConsoles
+import config from "../config.js"
 
 class ConsoleServices {
     constructor(){
-        this.model = Factory.get("MONGOConsoles")
+        this.model = Factory.get(config.PERSISTENCECONSOLES)
     }
 
     postConsole = async(data) => {

@@ -7,12 +7,12 @@ import config from "../config.js";
 class Factory {
     static get(persistence) {
         switch (persistence) {
-            case "MEMConsoles":
+            case (config.LOCALPERSISTENCECONSOLES):
                 console.log("Persistencia por servidor...entidad Consoles")
                 return new ConsolesMemModel()
                 break;
             
-            case "MEMGames":
+            case (config.LOCALPERSISTENCEGAMES):
                 console.log("Persistencia por servidor..entidad Games")
                 return new GamesMemModel()
                 break;
@@ -27,6 +27,7 @@ class Factory {
                 break
 
             default:
+                return new ConsolesMongoModel() || new GamesMongoModel()
                 break;
         }
     }
