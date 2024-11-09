@@ -1,5 +1,6 @@
 import Factory from "../models/Factory.js"
 import config from "../config.js"
+import { validateConsolePrice } from "./validate/schema.js"
 
 class ConsoleServices {
     constructor(){
@@ -7,7 +8,12 @@ class ConsoleServices {
     }
 
     postConsole = async(data) => {
-        return await this.model.postConsole(data)
+        if (!validateConsolePrice(data)) {
+            const newConsole = await this.model.postConsole(data)
+            return newConsole
+        } else{
+            throw new Error("No se puede ingresar consolas con precio menor o igual a 0")
+        }
     }
 
     getConsoles = async() => {
