@@ -2,6 +2,7 @@ import express from "express"
 import GamesRouter from "./routes/games.route.js"
 import ConsoleRouter from "./routes/consoles.route.js"
 import MongoConnection from "./models/MongoConnection.js"
+import ApiDolar from "./services/integration/apiDolar.js"
 
 
 const PORT = 8080

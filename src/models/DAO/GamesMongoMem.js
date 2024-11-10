@@ -1,5 +1,7 @@
+import Integration from "../../services/integration/integration.js"
 import MongoConnection from "../MongoConnection.js"
 import { ObjectId } from "mongodb"
+
 
 class GamesMongoModel {
     constructor(){
@@ -9,7 +11,12 @@ class GamesMongoModel {
     async getGames() {
         const games = await MongoConnection.db
         .collection("games").find({}).toArray()
-        return games
+        
+        console.log(games)
+
+        const gamesWithArsPrice = Integration.showPriceInArs(games)
+        return gamesWithArsPrice
+        // return games
     }
 
     async postGame (data) {
