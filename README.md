@@ -23,14 +23,22 @@ Una vez clonado, en la terminal debe ejecutar el comando `npm install` para pode
 
 Para levantar el servidor, también en la terminal, puede hacerlo mediante 2 comandos:
 `npm run start`  o `npm run watch`.
+!(![run watch](https://github.com/user-attachments/assets/13bbb016-7af1-4867-ad69-844e188ae022)
+)
 
 ### Ejecutar peticiones
 
 Debe tener un software tal como postman.
 
 Copiar *las rutas de los archivos Routes de cada entidad* y mandar
-las distintas solicitudes mediante postman como se muestra a continuación.
+las distintas solicitudes mediante postman como se muestra a continuación. Esto debe hacerse teniendo el servidor levantado.
 
 !(![postamn](https://github.com/user-attachments/assets/39ba921f-e079-40eb-8c69-694380b10f7c)
+)
+
+### Cerrar Servidor
+En la terminal, usamos la combinación de teclas `CTRL` + `C` y le damos la opción _S_.
+Así cerraremos el servidor.
+!(![cerrar servidor](https://github.com/user-attachments/assets/d41d921d-c17d-4ac6-b8f9-c87b61cf6c59)
 )
 
