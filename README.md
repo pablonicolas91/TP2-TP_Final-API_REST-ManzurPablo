@@ -26,7 +26,7 @@ Para levantar el servidor, también en la terminal, puede hacerlo mediante 2 com
 
 ### Ejecutar peticiones
 
-Debe tener un software tal como `rgb(9, 105, 218)`postman.
+Debe tener un software tal como postman.
 
 Copiar *las rutas de los archivos Routes de cada entidad* y mandar
 las distintas solicitudes mediante postman como se muestra a continuación.
