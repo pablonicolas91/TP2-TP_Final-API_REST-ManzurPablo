@@ -1,10 +1,11 @@
 import Factory from "../models/Factory.js"
 import config from "../config.js"
 import { validateConsolePrice } from "./validate/schema.js"
+import Integration from "./integration/integration.js"
 
 class ConsoleServices {
     constructor(){
-        this.model = Factory.get(config.PERSISTENCECONSOLES)
+        this.model = Factory.get(config.MONGOPERSISTENCE).consoles
     }
 
     postConsole = async(data) => {
@@ -17,7 +18,9 @@ class ConsoleServices {
     }
 
     getConsoles = async() => {
-        return await this.model.getConsoles()
+        const consoles = await this.model.getConsoles()
+        const consolesWithArsPrice = Integration.showPriceInArs(consoles)
+        return consolesWithArsPrice
     }
 
     putConsole = async (id, data) => {

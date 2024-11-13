@@ -1,6 +1,6 @@
 import MongoConnection from "../MongoConnection.js"
 import { ObjectId } from "mongodb"
-import Integration from "../../services/integration/integration.js"
+
 
 class ConsolesMongoModel {
     constructor(){
@@ -10,12 +10,6 @@ class ConsolesMongoModel {
     async getConsoles() {
         const consoles = await MongoConnection.db
         .collection("consoles").find({}).toArray()
-
-        console.log(consoles)
-
-        const consolesWithArsPrice = Integration.showPriceInArs(consoles)
-        return consolesWithArsPrice
-
         return consoles
     }
 

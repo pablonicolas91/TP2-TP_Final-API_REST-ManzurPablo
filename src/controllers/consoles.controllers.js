@@ -14,10 +14,10 @@ class ConsolesController {
             }
 
             const newConsole = await this.service.postConsole(data)
-            res.send(newConsole)
+            res.status(201).send(newConsole)
         
         } catch(error){
-            res.send({error: error.message})
+            res.status(400).send({error: error.message})
         }
     }
 

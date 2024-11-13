@@ -4,7 +4,7 @@ class Integration {
     static async showPriceInArs (data) {
         const dolarTarjeta = await ApiDolar.getDolarTarjeta()
         const dolarOficial = await ApiDolar.getDolarOficial()
-        console.log(`Dolar Oficial: ${dolarOficial}\nDolar Tarjeta: ${dolarTarjeta}`)
+        // console.log(`Dolar Oficial: ${dolarOficial}\nDolar Tarjeta: ${dolarTarjeta}`)
 
         data.map( el => {
             el['precioARSDolarTarjeta'] = parseFloat((el.precioUSD * dolarTarjeta).toFixed(2))

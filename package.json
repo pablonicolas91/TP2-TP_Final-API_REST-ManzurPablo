@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node --env-file=.env .",
     "watch": "node --env-file=.env --watch .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "testA": "mocha src/test/consoles.integration.test.js",
+    "testB": "mocha src/test/games.integration.test.js"
   },
   "keywords": [],
   "author": "",
@@ -16,5 +17,11 @@
     "express": "^4.21.1",
     "joi": "^17.13.3",
     "mongodb": "^6.10.0"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^9.2.0",
+    "chai": "^5.1.2",
+    "mocha": "^10.8.2",
+    "supertest": "^7.0.0"
   }
 }

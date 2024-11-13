@@ -1,10 +1,11 @@
 import Factory from "../models/Factory.js"
 import config from "../config.js"
 import { validateGamePrice} from "./validate/schema.js"
+import Integration from "./integration/integration.js"
 
 class GamesServices {
     constructor(){
-        this.model = Factory.get(config.PERSISTENCEGAMES)
+        this.model = Factory.get(config.MONGOPERSISTENCE).games
     }
 
     postGame = async(data) => {
@@ -18,7 +19,9 @@ class GamesServices {
     }
 
     getGames = async() => {
-        return await this.model.getGames()
+        const games = await this.model.getGames()
+        const gamesWithArsPrice = Integration.showPriceInArs(games)
+        return gamesWithArsPrice
     }
 
     putGame = async (id, data) => {

@@ -15,10 +15,10 @@ class GamesController{
             }
 
             const newGame = await this.service.postGame(data)
-            res.send(newGame)
+            res.status(201).send(newGame)
         
         } catch(error){
-            res.send({error: error.message})
+            res.status(400).send({error: error.message})
         }
     }
 
