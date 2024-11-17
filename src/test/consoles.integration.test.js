@@ -5,6 +5,7 @@ import DataSet from "../utils/dataSetTest.js";
 const urlbase =  supertest("http://localhost:8080")//consoles
 
 // TEST DE INTEGRACION
+// npm run testA
 
 describe('Test de consolas: ', () => {
 

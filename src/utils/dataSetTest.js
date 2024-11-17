@@ -15,8 +15,6 @@ class DataSet {
             precioUSD: 0
             }
     }
-    
-    static getDatoPruebaGameObjetoVacio = () => "{}"
 
 }
 
